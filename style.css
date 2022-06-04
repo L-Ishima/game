@@ -1,0 +1,205 @@
+.container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 20%;
+    left: 30%;
+
+    width: 800px;
+    height: 600px;
+
+    background-color: rgb(50, 110, 153);
+}
+
+h1 {
+    color: #fff;
+
+    font-size: 48px;
+    text-align: center;
+}
+
+button {
+    height: 40px;
+    width: 300px;
+
+    font-size: 20px;
+
+    border: none;
+    background-color: transparent;
+    color: #fff;
+
+    transition: color .3s, font-size .3s, transform .3s;
+}
+
+button::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 30px;
+
+    border: 15px solid transparent; 
+    border-left: 20px solid rgb(27, 31, 84);
+
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: .7s;
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration: .7s;
+}
+ 
+@keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+ 
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+button:hover {
+    color: rgb(27, 31, 84);
+
+    font-size: 24px;
+    font-weight: 700;
+
+    transform: translateX(5px);
+    transition: color .3s, font-size .3s, transform .3s;
+}
+
+button:hover::before {
+    display: block;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    width: 800px;
+    height: 505px;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 20px;
+
+    color: rgb(32, 112, 48);
+    font-size: 36px;
+
+    background-color: rgb(32, 112, 48);
+
+    transition: background-color .2s, transform .3s, outline .3s;
+    animation: rotate-right .3s;
+}
+
+@keyframes rotate-right {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.card--2 {
+    width: 258px;
+    height: 232px;
+}
+
+.card--4 {
+    width: 159px;
+    height: 105px;
+}
+
+.card--6 {
+    width: 104px;
+    height: 68px;
+}
+
+.card--8 {
+    width: 71px;
+    height: 46px;
+}
+
+.card--10 {
+    width: 55px;
+    height: 33px;
+}
+
+.card:hover {
+    outline: 3mm ridge rgba(9, 21, 84, 0.6);
+    
+    transition: outline .3s;
+}
+
+.card--active {
+    transition: background-color .3s, transform .3s, outline .3s;
+    animation: rotate-left .6s;
+}
+
+@keyframes rotate-left {
+    0% {
+        transform: rotateY(-180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.card--white {
+    background-color: #fff;
+}
+
+.card--couple {
+    background-color: #fff;
+    transition: background-color .3s;
+}
+
+.win-title {
+    background-color: blueviolet;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    font-size: 72px;
+    padding: 10px;
+}
+
+.start-button {
+    position: absolute;
+    top:60%;
+    left: 24%;
+}
+
+.exit-button {
+    position: absolute;
+    top:60%;
+    right: 15%;
+}
+
+.game-over-title {
+    position: absolute;
+    left: 30%;
+    background-color: red;
+    padding: 10px;
+}
+
+.timer {
+    position: absolute;
+    bottom: -18px;
+    background-color: white;
+    font-size: 20px;
+    padding: 10px;
+}
